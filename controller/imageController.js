@@ -12,7 +12,8 @@ exports.new = function (req, res) {
         // Color quantity
         " +dither -colors " + req.body.colors +
         needsGrayscale(req.body.grayscale) +
-        `-scale ${pixelizationCoef1}% -scale ${pixelizationCoef2}% ` +
+        // `-scale ${pixelizationCoef1}% -scale ${pixelizationCoef2}% ` +
+        `-scale ${pixelizationCoef1}% ` +
         req.file.path + "-new")
         .then(({ stdout, stderr }) => {
             var photo = fs.readFileSync("./" + req.file.path + "-new")
