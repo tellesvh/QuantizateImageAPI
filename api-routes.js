@@ -20,6 +20,6 @@ var imageController = require('./controller/imageController');
 // Rotas
 router
     .route('/image')
-    .get(uploads.single('photo'), imageController.new)
+    .post(uploads.single('photo'), imageController.new)
 
 module.exports = router;
